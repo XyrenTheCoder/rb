@@ -1,6 +1,6 @@
 # rb
 
-This is my first time learning ruby, I used 5 hours on this Discord bot code
+This is my first time learning ruby, I spent 5 hours on learning 0.1% ruby basics and wrote this Discord bot code
 
 ## contributers
 
