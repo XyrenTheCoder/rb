@@ -16,11 +16,7 @@ rb_bot.command :multiply, min_args: 2 do |event, *args|
 end
 
 rb_bot.command :divide, min_args: 2 do |event, *args|
-    nums = args.collect &:to_i
-    if arg2 == 0
-        raise ZeroDivisionError
-    else
-        event.respond nums.collect &:/
+    event.respond args.collect(&:to_i).collect(&:/)
 
 rb_bot.run
 rb_bot.join
