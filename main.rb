@@ -4,7 +4,7 @@ rb_bot = Discordrb::Commands::CommandBot.new token: <token>, client_id: <id>, pr
 
 # commands
 rb_bot.command :sum, min_args: 2 do |event, *args|
-    event.respond args.collect(&:to_f).inject(&:+)
+    event.respond (args.collect(&:to_f).inject(&:+)).next_float()
 end
 
 rb_bot.command :subtract, min_args: 2 do |event, *args|
