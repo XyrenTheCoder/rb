@@ -17,7 +17,7 @@ end
 
 rb_bot.command :divide, min_args: 2 do |event, *args|
     nums = args.collect &:to_i
-    if arg2 == 0 do
+    if arg2 == 0
         raise ZeroDivisionError
     else
         event.respond nums.collect &:/
