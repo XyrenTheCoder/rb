@@ -1,6 +1,6 @@
 require "discordrb"
 
-rb_bot = Discordrb::Bot.new token: <token>, client_id: <id>, prefix: "<prefix>"
+rb_bot = Discordrb::Commands::CommandBot.new token: <token>, client_id: <id>, prefix: "<prefix>"
 
 # commands
 rb_bot.command :sum, min_args: 2 do |event, *args|
