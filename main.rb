@@ -58,7 +58,7 @@ rb_bot.command :tanh do |event, *arg| #hyperbolic tangent
   event.respond CMath.tanh(arg.join(" ").to_c).to_s
 end
 
-#rb_bot.command :log do |event, *arg| #logarithm
+#rb_bot.command :log do |event, *arg| #logarithm syntax log(x, base) base Math::E to do ln
 #  event.command CMath.log(ar
 
 rb_bot.run
