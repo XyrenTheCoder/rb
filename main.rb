@@ -1,5 +1,6 @@
 require "discordrb"
 require "cmath"
+require "subprocess"
 
 rb_bot = Discordrb::Commands::CommandBot.new token: <token>, client_id: <id>, prefix: "<prefix>"
 
@@ -96,8 +97,9 @@ rb_bot.command :atan do |event, *arg| #arc tangent
 end
 
 # calculus
-#rb_bot.command :derivative do |event, *args| # derivative
-#  event.respond
+rb_bot.command :derivative do |event, *arg|
+  event.respond Subprocess.check_output(["python", "file.py", arg.join(" ")])
+end
   
 rb_bot.run
 rb_bot.join
