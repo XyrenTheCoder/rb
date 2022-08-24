@@ -19,6 +19,7 @@ first install required dependencies using `gem`
 ```
 gem install subprocess
 gem install cmath
+gem install discordrb
 ```
 
 then run `main.rb`: `ruby main.rb`
