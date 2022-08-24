@@ -42,6 +42,5 @@ rb_bot.command :tan do |event, arg| #tangent
   event.respond Math.tan(arg.to_f).to_s
 end
 
-
 rb_bot.run
 rb_bot.join
