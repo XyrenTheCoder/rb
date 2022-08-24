@@ -71,27 +71,27 @@ rb_bot.command :tanh do |event, *arg| #hyperbolic tangent
   event.respond CMath.tanh(arg.join(" ").to_c).to_s
 end
 
-rb_bot.command :isinh do |event, *arg| #inverse hyperbolic sine
+rb_bot.command :arcsinh do |event, *arg| #inverse hyperbolic sine
   event.respond CMath.asinh(arg.join(" ").to_c).to_s
 end
 
-rb_bot.command :icosh do |event, *arg| #inverse hyperbolic cosine
+rb_bot.command :arccosh do |event, *arg| #inverse hyperbolic cosine
   event.respond CMath.acosh(arg.join(" ").to_c).to_s
 end
 
-rb_bot.command :itanh do |event, *arg| #inverse hyperbolic tangent
+rb_bot.command :arctanh do |event, *arg| #inverse hyperbolic tangent
   event.respond CMath.atanh(arg.join(" ").to_c).to_s
 end
 
-rb_bot.command :asin do |event, *arg| #arc sine
+rb_bot.command :arcsin do |event, *arg| #arc sine
   event.respond CMath.asin(arg.join(" ").to_c).to_s
 end
 
-rb_bot.command :acos do |event, *arg| #arc cosine
+rb_bot.command :arccos do |event, *arg| #arc cosine
   event.respond CMath.acos(arg.join(" ").to_c).to_s
 end
 
-rb_bot.command :atan do |event, *arg| #arc tangent
+rb_bot.command :arctan do |event, *arg| #arc tangent
   event.respond CMath.atan(arg.join(" ").to_c).to_s
 end
 
