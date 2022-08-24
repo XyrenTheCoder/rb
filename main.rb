@@ -63,7 +63,7 @@ rb_bot.command :log do |event, base, *arg| #logarithm
 end
 
 rb_bot.command :ln do |event, *arg| #natural logarithm
-  event.respond CMath.log(arg.join(" ").to_c, Math::e).to_s
+  event.respond CMath.log(arg.join(" ").to_c, Math::E).to_s
 end
 
 
