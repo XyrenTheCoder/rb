@@ -27,7 +27,7 @@ rb_bot.command :sqrt do |event, *args| #square root
 end
 
 rb_bot.command :abs do |event, arg| #absolute value
-  event.respond arg.to_f.abs().to_s
+  event.respond arg.to_c.abs().to_s
 end
 
 rb_bot.command :sin do |event, arg| #sine
