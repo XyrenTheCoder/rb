@@ -27,6 +27,13 @@ rb_bot.command :sin, min_args: 1 do |event, *args|
   event.respond Math.sin(args.collect(&:to_f)).to_s
 end
 
+rb_bot.command :cos, min_args: 1 do |event, *args|
+  event.respond Math.cos(args.collect(&:to_f)).to_s
+end
+
+rb_bot.command :tan, min_args: 1 do |event, *args|
+  event.respond Math.tan(args.collect(&:to_f)).to_s
+end
 
 
 rb_bot.run
