@@ -23,6 +23,10 @@ rb_bot.command :absolute, min_args: 1 do |event, *args|
   event.respond args.collect(&:to_f).abs().to_s
 end
 
+rb_bot.command :sin, min_args: 1 do |event, *args|
+  event.respond Math.sin(args.collect(&:to_f)).to_s
+end
+
 
 
 rb_bot.run
