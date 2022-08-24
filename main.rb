@@ -28,7 +28,6 @@ rb_bot.command :sin do |event, arg| #sine
 end
 
 rb_bot.command:cos do |event, arg| #cosine
-  #event.respond Math.cos(args.collect(&:to_f).at(0)).to_s
   event.respond Math.cos(arg.to_f).to_s
 end
 
