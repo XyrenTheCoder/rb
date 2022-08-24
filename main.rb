@@ -4,7 +4,7 @@ require "subprocess"
 
 rb_bot = Discordrb::Commands::CommandBot.new token: <token>, client_id: <id>, prefix: "<prefix>"
 
-# # real (non imaginary) commented comment
+# complex (basic)
 rb_bot.command :sum, min_args: 2 do |event, *args| #sum
   event.respond args.collect(&:to_c).inject(&:+).to_s
 end
