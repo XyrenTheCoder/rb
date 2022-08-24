@@ -66,6 +66,11 @@ rb_bot.command :ln do |event, *arg| #natural logarithm
   event.respond CMath.log(arg.join(" ").to_c, Math::E).to_s
 end
 
+rb_bot.command :exp do |event, *arg| #exponential function
+  event.respond CMath.exp(arg.join(" ").to_c).to_s
+end
+
+
 
 rb_bot.run
 rb_bot.join
