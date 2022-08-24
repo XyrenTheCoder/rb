@@ -71,15 +71,15 @@ rb_bot.command :tanh do |event, *arg| #hyperbolic tangent
   event.respond CMath.tanh(arg.join(" ").to_c).to_s
 end
 
-rb_bot.command :asin do |event, *arg|
+rb_bot.command :asin do |event, *arg| #arc sine
   event.respond CMath.asin(arg.join(" ").to_c).to_s
 end
 
-rb_bot.command :acos do |event, *arg|
+rb_bot.command :acos do |event, *arg| #arc cosine
   event.respond CMath.acos(arg.join(" ").to_c).to_s
 end
 
-rb_bot.command :atan do |event, *arg|
+rb_bot.command :atan do |event, *arg| #arc tangent
   event.respond CMath.atan(arg.join(" ").to_c).to_s
 end
 
