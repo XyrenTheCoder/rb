@@ -4,21 +4,21 @@ require "subprocess"
 
 rb_bot = Discordrb::Commands::CommandBot.new token: <token>, client_id: <id>, prefix: "<prefix>"
 
-# real (non imaginary)
+# # real (non imaginary) commented comment
 rb_bot.command :sum, min_args: 2 do |event, *args| #sum
-  event.respond args.collect(&:to_f).inject(&:+).to_s
+  event.respond args.collect(&:to_c).inject(&:+).to_s
 end
 
 rb_bot.command :sub, min_args: 2 do |event, *args| #subtract
-  event.respond args.collect(&:to_f).inject(&:-).to_s
+  event.respond args.collect(&:to_c).inject(&:-).to_s
 end
 
 rb_bot.command :mul, min_args: 2 do |event, *args| #multiply
-  event.respond args.collect(&:to_f).inject(&:*).to_s
+  event.respond args.collect(&:to_c).inject(&:*).to_s
 end
 
 rb_bot.command :div, min_args: 2 do |event, *args| #divide
-  event.respond args.collect(&:to_f).inject(&:/).to_s
+  event.respond args.collect(&:to_c).inject(&:/).to_s
 end
 
 # complex (normal)
