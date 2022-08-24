@@ -54,5 +54,11 @@ rb_bot.command :cosh do |event, *arg| #hyperbolic cosine
   event.respond CMath.cosh(arg.join(" ").to_c).to_s
 end
 
+rb_bot.command :tanh do |event, *arg| #hyperbolic tangent
+  event.respond CMath.tanh(arg.join(" ").to_c).to_s
+end
+
+
+
 rb_bot.run
 rb_bot.join
