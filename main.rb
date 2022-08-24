@@ -34,6 +34,18 @@ rb_bot.command :abs do |event, *arg| #absolute value
   event.respond arg.to_c.abs().to_s
 end
 
+rb_bot.command :log do |event, base, *arg| #logarithm
+  event.respond CMath.log(arg.join(" ").to_c, base.to_f).to_s
+end
+
+rb_bot.command :ln do |event, *arg| #natural logarithm
+  event.respond CMath.log(arg.join(" ").to_c, Math::E).to_s
+end
+
+rb_bot.command :exp do |event, *arg| #exponential function
+  event.respond CMath.exp(arg.join(" ").to_c).to_s
+end
+
 # complex (trigonometry)
 rb_bot.command :sin do |event, *arg| #sine
   event.respond CMath.sin(arg.join(" ").to_c).to_s
@@ -57,18 +69,6 @@ end
 
 rb_bot.command :tanh do |event, *arg| #hyperbolic tangent
   event.respond CMath.tanh(arg.join(" ").to_c).to_s
-end
-
-rb_bot.command :log do |event, base, *arg| #logarithm
-  event.respond CMath.log(arg.join(" ").to_c, base.to_f).to_s
-end
-
-rb_bot.command :ln do |event, *arg| #natural logarithm
-  event.respond CMath.log(arg.join(" ").to_c, Math::E).to_s
-end
-
-rb_bot.command :exp do |event, *arg| #exponential function
-  event.respond CMath.exp(arg.join(" ").to_c).to_s
 end
 
 rb_bot.command :asin do |event, *arg|
