@@ -11,4 +11,4 @@
 
 ## contributors
 
-+ thatOneArchUser on calculus.py
++ thatOneArchUser on calculus.py and debug
