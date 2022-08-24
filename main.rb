@@ -70,7 +70,17 @@ rb_bot.command :exp do |event, *arg| #exponential function
   event.respond CMath.exp(arg.join(" ").to_c).to_s
 end
 
+rb_bot.command :asin do |event, *arg|
+  event.respond CMath.asin(arg.join(" ").to_c).to_s
+end
 
+rb_bot.command :acos do |event, *arg|
+  event.respond CMath.acos(arg.join(" ").to_c).to_s
+end
+
+rb_bot.command :atan do |event, *arg|
+  event.respond CMath.atan(arg.join(" ").to_c).to_s
+end
 
 rb_bot.run
 rb_bot.join
