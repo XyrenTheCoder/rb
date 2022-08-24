@@ -100,7 +100,7 @@ rb_bot.command :derivative do |event, *arg| #derivatives
   event.respond Subprocess.check_output(["python", "calculus.py", "d", arg.join(" ")])
 end
   
-rb_bot.command :integral do |event, *arg|
+rb_bot.command :integral do |event, *arg| #integrals
   event.respond Subprocess.check_output(["python", "calculus.py", "i", arg.join(" ")])
 end
 
