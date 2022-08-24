@@ -59,7 +59,7 @@ rb_bot.command :tanh do |event, *arg| #hyperbolic tangent
 end
 
 rb_bot.command :log do |event, base, *arg|
-  event.respond CMath.log(arg.join(' ').to_c, base.to_f).to_s
+  event.respond CMath.log(arg.join(" ").to_c, base.to_f).to_s
 end
 
 rb_bot.run
