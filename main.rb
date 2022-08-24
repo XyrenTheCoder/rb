@@ -21,7 +21,7 @@ end
 
 rb_bot.command :sqrt do |event, arg| #square root
   if arg < 0
-    return ArgumentError
+    raise ArgumentError
   else
     event.respond Math.sqrt(arg.to_f).to_s
 end
