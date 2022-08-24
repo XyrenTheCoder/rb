@@ -102,5 +102,6 @@ end
 rb_bot.command :derivative do |event, *args| #
   func = args.collect &:to_s
   event.respond calculus.derivative(func)
+  
 rb_bot.run
 rb_bot.join
