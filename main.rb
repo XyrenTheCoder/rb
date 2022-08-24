@@ -19,20 +19,21 @@ rb_bot.command :div, min_args: 2 do |event, *args| #divide
   event.respond args.collect(&:to_f).inject(&:/).to_s
 end
 
-rb_bot.command :abs, min_args: 1 do |event, *args| #absolute value
-  event.respond args.collect(&:to_f).abs().to_s
+rb_bot.command :abs do |event, arg| #absolute value
+  event.respond arg.to_f.abs().to_s
 end
 
-rb_bot.command :sin, min_args: 1 do |event, *args| #sine
-  event.respond Math.sin(args.collect(&:to_f)).to_s
+rb_bot.command :sin do |event, arg| #sine
+  event.respond Math.sin(arg.to_f).to_s
 end
 
-rb_bot.command :cos, min_args: 1 do |event, *args| #cosine
-  event.respond Math.cos(args.collect(&:to_f)).to_s
+rb_bot.command:cos do |event, arg| #cosine
+  #event.respond Math.cos(args.collect(&:to_f).at(0)).to_s
+  event.respond Math.cos(arg.to_f).to_s
 end
 
-rb_bot.command :tan, min_args: 1 do |event, *args| #tangent
-  event.respond Math.tan(args.collect(&:to_f)).to_s
+rb_bot.command :tan do |event, arg| #tangent
+  event.respond Math.tan(arg.to_f).to_s
 end
 
 
