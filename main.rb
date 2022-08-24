@@ -1,9 +1,9 @@
 require "discordrb"
-require "CMath"
+require "cmath"
 
 rb_bot = Discordrb::Commands::CommandBot.new token: <token>, client_id: <id>, prefix: "<prefix>"
 
-#commands
+# real (non imaginary)
 rb_bot.command :sum, min_args: 2 do |event, *args| #sum
   event.respond args.collect(&:to_f).inject(&:+).to_s
 end
@@ -20,6 +20,7 @@ rb_bot.command :div, min_args: 2 do |event, *args| #divide
   event.respond args.collect(&:to_f).inject(&:/).to_s
 end
 
+# complex
 rb_bot.command :sqrt do |event, arg| #square root
   event.respond CMath.sqrt(arg.join(" ").to_c).to_s
   #event.respond Math.sqrt(arg.to_f).to_s
