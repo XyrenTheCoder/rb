@@ -35,16 +35,18 @@ rb_bot.command :abs do |event, arg| #absolute value
 end
 
 rb_bot.command :sin do |event, arg| #sine
-  event.respond Math.sin(arg.to_f).to_s
+  event.respond CMath.sin(arg.join(" ").to_c).to_s
 end
 
-rb_bot.command:cos do |event, arg| #cosine
-  event.respond Math.cos(arg.to_f).to_s
+rb_bot.command :cos do |event, arg| #cosine
+  event.respond CMath.cos(arg.join(" ").to_c).to_s
 end
 
 rb_bot.command :tan do |event, arg| #tangent
-  event.respond Math.tan(arg.to_f).to_s
+  event.respond CMath.tan(arg.join(" ").to_c).to_s
 end
+
+
 
 rb_bot.run
 rb_bot.join
