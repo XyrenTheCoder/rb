@@ -97,7 +97,7 @@ rb_bot.command :atan do |event, *arg| #arc tangent
 end
 
 # calculus
-rb_bot.command :derivative do |event, *arg|
+rb_bot.command :derivative do |event, *arg| #derivatives
   event.respond Subprocess.check_output(["python", "file.py", arg.join(" ")])
 end
   
