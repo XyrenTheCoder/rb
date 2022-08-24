@@ -1,5 +1,6 @@
 require "discordrb"
 require "cmath"
+require "pycall"
 
 rb_bot = Discordrb::Commands::CommandBot.new token: <token>, client_id: <id>, prefix: "<prefix>"
 
