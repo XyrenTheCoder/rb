@@ -26,6 +26,10 @@ rb_bot.command :sqrt do |event, *args| #square root
   #event.respond Math.sqrt(arg.to_f).to_s
 end
 
+rb_bot.command :cbrt do |event, *args| #cube root
+  event.respond CMath.cbrt(arg.join(" ").to_c).to_s
+end
+
 rb_bot.command :abs do |event, arg| #absolute value
   event.respond arg.to_c.abs().to_s
 end
