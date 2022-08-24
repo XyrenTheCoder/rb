@@ -19,6 +19,13 @@ rb_bot.command :div, min_args: 2 do |event, *args| #divide
   event.respond args.collect(&:to_f).inject(&:/).to_s
 end
 
+rb_bot.command :sqrt do |event, arg| #square root
+  if arg < 0
+    return ArgumentError
+  else
+    event.respond Math.sqrt(arg.to_f).to_s
+end
+
 rb_bot.command :abs do |event, arg| #absolute value
   event.respond arg.to_f.abs().to_s
 end
