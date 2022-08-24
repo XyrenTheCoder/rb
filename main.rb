@@ -21,7 +21,8 @@ rb_bot.command :div, min_args: 2 do |event, *args| #divide
 end
 
 rb_bot.command :sqrt do |event, arg| #square root
-  event.respond Math.sqrt(arg.to_f).to_s
+  event.respond CMath.sqrt(arg.join(" ").to_c).to_s
+  #event.respond Math.sqrt(arg.to_f).to_s
 end
 
 rb_bot.command :abs do |event, arg| #absolute value
