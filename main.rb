@@ -99,9 +99,8 @@ rb_bot.command :atan do |event, *arg| #arc tangent
 end
 
 # calculus
-rb_bot.command :derivative do |event, *args| #
-  func = args.collect &:to_s
-  event.respond calculus.derivative(func)
+#rb_bot.command :derivative do |event, *args| # derivative
+#  event.respond
   
 rb_bot.run
 rb_bot.join
