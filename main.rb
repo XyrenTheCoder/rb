@@ -24,7 +24,6 @@ end
 # complex (normal)
 rb_bot.command :sqrt do |event, *arg| #square root
   event.respond CMath.sqrt(arg.join(" ").to_c).to_s
-  #event.respond Math.sqrt(arg.to_f).to_s
 end
 
 rb_bot.command :cbrt do |event, *arg| #cube root
