@@ -1,8 +1,5 @@
 require "discordrb"
 require "cmath"
-require "pycall"
-
-calculus = Pycall.import_module("calculus")
 
 rb_bot = Discordrb::Commands::CommandBot.new token: <token>, client_id: <id>, prefix: "<prefix>"
 
