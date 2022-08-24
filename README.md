@@ -16,7 +16,9 @@
 
 ## installation
 first install required dependencies using `gem`
-> `gem install subprocess`\
-`gem install cmath`
+```
+gem install subprocess
+gem install cmath
+```
 
 then run `main.rb`: `ruby main.rb`
