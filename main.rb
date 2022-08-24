@@ -1,4 +1,5 @@
 require "discordrb"
+require "CMath"
 
 rb_bot = Discordrb::Commands::CommandBot.new token: <token>, client_id: <id>, prefix: "<prefix>"
 
@@ -20,10 +21,7 @@ rb_bot.command :div, min_args: 2 do |event, *args| #divide
 end
 
 rb_bot.command :sqrt do |event, arg| #square root
-  if arg < 0
-    raise ArgumentError
-  else
-    event.respond Math.sqrt(arg.to_f).to_s
+  event.respond Math.sqrt(arg.to_f).to_s
 end
 
 rb_bot.command :abs do |event, arg| #absolute value
