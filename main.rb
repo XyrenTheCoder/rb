@@ -20,7 +20,7 @@ rb_bot.command :div, min_args: 2 do |event, *args| #divide
   event.respond args.collect(&:to_f).inject(&:/).to_s
 end
 
-# complex
+# complex (normal)
 rb_bot.command :sqrt do |event, *arg| #square root
   event.respond CMath.sqrt(arg.join(" ").to_c).to_s
   #event.respond Math.sqrt(arg.to_f).to_s
@@ -34,6 +34,7 @@ rb_bot.command :abs do |event, *arg| #absolute value
   event.respond arg.to_c.abs().to_s
 end
 
+# complex (trigonometry)
 rb_bot.command :sin do |event, *arg| #sine
   event.respond CMath.sin(arg.join(" ").to_c).to_s
 end
