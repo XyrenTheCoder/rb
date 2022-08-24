@@ -1,3 +1,4 @@
+import sys
 from sympy import *
 from math import e, tau, pi
 
@@ -7,4 +8,14 @@ def derivative(expr):
   except: pass
   try: out = str(eval(expr).diff(x))
   except AttributeError: out = 0
-  return str(out).replace("**", "^")
+  return print(str(out).replace("**", "^").replace("*", "\\*"))
+
+def integral(expr):
+  x = Symbol("x")
+  try: expr = expr.replace("^", "**")
+  except: pass
+  out = str(integrate(eval(expr), x))
+  return print(str(out).replace("**", "^").replace("*", "\\*") + " + C")
+
+if sys.argv[1] == "d": derivative(sys.argv[2])
+else: integral(sys.argv[2])
