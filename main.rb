@@ -147,6 +147,7 @@ def encode(text)
       arr.append(var)
     end
     arr.append(".;")
+  end
   return "".join(arr)
 end
       
