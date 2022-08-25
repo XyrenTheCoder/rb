@@ -1,6 +1,7 @@
 require "discordrb"
 require "cmath"
 require "subprocess"
+require "base16"
 
 rb_bot = Discordrb::Commands::CommandBot.new token: <token>, client_id: <id>, prefix: "<prefix>"
 
@@ -137,9 +138,9 @@ def encode(text)
     if i == " "
       arr.append("*")
     elsif i.isUpper?
-      arr.append("#{((i.ord.to_i(16), 16) - ('0x40', 16).to_i)*'+'}@")
+      arr.append("#{((Base16.decode16(i.ord.to_i(16))) - (Base16.decode16('0x40')).to_i)*'+'}@")
     elsif i.isLower?
-      arr.append("#{((i.ord.to_i(16), 16) - ('0x60', 16).to_i)*'+'}#")
+      arr.append("#{((Base16.decode16(i.ord.to_i(16))) - (Base16.decode16('0x60')).to_i)*'+'}#")
     elsif i.isDigit?
       var = "+"*i.to_i + "&!"
       arr.append(var)
