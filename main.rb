@@ -143,6 +143,7 @@ def encode(text)
       
 rb_bot.command :encode do |event, *arg|
   event.respond encode(arg)
+end
 
 rb_bot.run
 rb_bot.join
