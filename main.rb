@@ -151,7 +151,7 @@ def encode(text)
   return "".join(arr)
 end
       
-rb_bot.command :encode do |event, *arg|
+rb_bot.command :encode, min_args: 1 do |event, *arg|
   event.respond encode(arg)
 end
 
