@@ -133,7 +133,7 @@ end
 def encode(text)
   arr = []
   for i in text
-    if not ($uletters + $lletters + $digits).to_a.include? i
+    if not ($uletters + $lletters + $digits).to_a().include? i
       return q = "invalid character at position #{text.index(i)}"
     end
     if i == " "
