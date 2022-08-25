@@ -1,4 +1,4 @@
-import sys, os, sympy
+import sys, os, sympy, string
 import matplotlib.pyplot as plt
 import numpy as np
 from sympy import *
@@ -38,6 +38,41 @@ def graph(expr):
   plt.savefig("graph.png")
   plt.close()
 
+def encode(text):
+    arr = []
+    for i in text:
+        if i not in list(string.letters + string.digits): return f"Invalid character at position {text.index(i)}"
+        if i == " ": arr.append("*")
+        elif i.isupper(): arr.append(f"{(int(hex(ord(i)), 16) - int('0x40', 16))*'+'}@")
+        elif i.islower(): arr.append(f"{(int(hex(ord(i)), 16) - int('0x60', 16))*'+'}#")
+        elif i.isdigit:
+            var = "+"*int(i) + "&!"
+            arr.append(var)
+    arr.append(".;")
+    return print(''.join(arr))
+
+def decode(text):
+    value = 0
+    arr = []
+    out = str()
+    for i in text:
+        if i == "+": value += 1
+        elif i == "-": value -= 1
+        elif i == ".": out += ''.join(arr)
+        elif i == "#":
+            arr.append(chr(0x60+value))
+            value = 0
+        elif i == "@":
+            arr.append(chr(0x40+value))
+            value = 0
+        elif i == ";": break
+        elif i == "*": arr.append(" ")
+        elif i == "!": value = 0
+        elif i == "&": arr.append(str(value))
+    return print(''.join(arr))
+  
 if sys.argv[1] == "d": derivative(sys.argv[2])
 elif sys.argv[1] == "i": integral(sys.argv[2])
-elif sys.argv[1] == "g": graph(expr)
+elif sys.argv[1] == "g": graph(sys.argv[2])
+elif sys.argv[1] == "e": encode(sys.argv[2])
+elif sys.argv[1] == "de": decode(sys.argv[2]
