@@ -104,5 +104,33 @@ rb_bot.command :integral do |event, *arg| #integrals
   event.respond Subprocess.check_output(["python", "calculus.py", "i", arg.join(" ")])
 end
 
+# encode / decode archiescript
+
+class String
+  def isUpper?
+    self == self.upcase
+  end
+
+  def isLower?
+    self == self.downcase
+  end
+end
+
+uletters = "A".."Z"
+lletters = "a".."z"
+digits = "0".."9"
+
+def encode(text)
+  arr = []
+  for i in text
+    if i not in (uletters + lletters + digits).to_a
+      return q = "invalid character at position #{text.index(i)}"
+    if i == " "
+      arr.append("*")
+    elsif i.isUpper?
+      arr.append("#{((i.ord.to_i(16), 16) - ('0x40', 16).to_i)*'+'}@")
+    elsif i.isLower?
+      arr.append("#{((i.ord.to_i(16), 16) - ('0x40', 16).to_i)*'+'}#")
+
 rb_bot.run
 rb_bot.join
