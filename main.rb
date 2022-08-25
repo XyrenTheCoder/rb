@@ -105,16 +105,17 @@ rb_bot.command :integral do |event, *arg| #integrals
   event.respond Subprocess.check_output(["python", "q.py", "i", arg.join(" ")])
 end
 
-rb_bot.command :graph do |event, *arg|
+rb_bot.command :graph do |event, *arg| #graphs
   Subprocess.run(["python", "q.py", "g", arg.join(" ")])
   #file
 end
 
-rb_bot.command :encode do |event, *arg|
+# archiescript enc + dec
+rb_bot.command :encode do |event, *arg| #encode
   event.respond Subprocess.check_output(["python", "q.py", "e", arg.join(" ")])
 end
 
-rb_bot.command :decode do |event, *arg|
+rb_bot.command :decode do |event, *arg| #decode
   event.respond Subprocess.check_output(["python", "q.py", "de", arg.join(" ")])
 end
 
