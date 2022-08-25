@@ -108,11 +108,15 @@ end
 
 class String
   def isUpper?
-    self == self.upcase
+    self in uletters
   end
 
   def isLower?
-    self == self.downcase
+    self in lletters
+  end
+  
+  def isDigit?
+    self in digits
   end
 end
 
