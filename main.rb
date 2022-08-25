@@ -137,6 +137,9 @@ def encode(text)
       arr.append("#{((i.ord.to_i(16), 16) - ('0x60', 16).to_i)*'+'}#")
     elsif i.isDigit?
       var = "+"*i.to_i + "&!"
+      arr.append(var)
+    arr.append(".;")
+  event.respond "".join(arr)
 
 rb_bot.run
 rb_bot.join
