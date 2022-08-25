@@ -97,20 +97,14 @@ end
 
 # calculus
 rb_bot.command :derivative do |event, *arg| #derivatives
-  event.respond Subprocess.check_output(["python", "mafs.py", "d", arg.join(" ")])
+  event.respond Subprocess.check_output(["python", "calculus.py", "d", arg.join(" ")])
 end
   
 rb_bot.command :integral do |event, *arg| #integrals
-  event.respond Subprocess.check_output(["python", "mafs.py", "i", arg.join(" ")])
-end
-
-rb_bot.command :graph do |event, *arg|
-  Subprocess.run(["python", "mafs.py", "g", arg.join(" ")])
-  #file
+  event.respond Subprocess.check_output(["python", "calculus.py", "i", arg.join(" ")])
 end
 
 # encode / decode archiescript
-
 uletters = "A".."Z"
 lletters = "a".."z"
 digits = "0".."9"
@@ -147,7 +141,7 @@ def encode(text)
   return "".join(arr)
 end
       
-rb_bot.command :encode do |event, *arg|
+rb_bot.command :encode do |event, *arg| #encode
   event.respond encode(arg)
 end
 
