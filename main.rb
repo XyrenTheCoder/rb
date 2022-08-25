@@ -106,6 +106,10 @@ end
 
 # encode / decode archiescript
 
+uletters = "A".."Z"
+lletters = "a".."z"
+digits = "0".."9"
+
 class String
   def isUpper?
     self in uletters
@@ -119,10 +123,6 @@ class String
     self in digits
   end
 end
-
-uletters = "A".."Z"
-lletters = "a".."z"
-digits = "0".."9"
 
 def encode(text)
   arr = []
