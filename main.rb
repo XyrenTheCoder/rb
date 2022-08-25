@@ -112,28 +112,28 @@ end
 
 # encode / decode archiescript
 
-uletters = "A".."Z"
-lletters = "a".."z"
-digits = "0".."9"
+$uletters = "A".."Z"
+$lletters = "a".."z"
+$digits = "0".."9"
 
 class String
   def isUpper?
-    self in uletters
+    self in $uletters
   end
 
   def isLower?
-    self in lletters
+    self in $lletters
   end
   
   def isDigit?
-    self in digits
+    self in $digits
   end
 end
 
 def encode(text)
   arr = []
   for i in text
-    if not (uletters + lletters + digits).to_a.include? i
+    if not ($uletters + $lletters + $digits).to_a.include? i
       return q = "invalid character at position #{text.index(i)}"
     end
     if i == " "
