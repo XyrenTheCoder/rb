@@ -40,3 +40,4 @@ def graph(expr):
 
 if sys.argv[1] == "d": derivative(sys.argv[2])
 elif sys.argv[1] == "i": integral(sys.argv[2])
+elif sys.argv[1] == "g": graph(expr)
