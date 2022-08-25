@@ -11,7 +11,7 @@
 
 ## contributors
 
-+ thatOneArchUser on calculus.py and debug
++ thatOneArchUser on additional math command and debug
 
 
 ## installation
