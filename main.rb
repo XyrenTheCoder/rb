@@ -97,11 +97,16 @@ end
 
 # calculus
 rb_bot.command :derivative do |event, *arg| #derivatives
-  event.respond Subprocess.check_output(["python", "calculus.py", "d", arg.join(" ")])
+  event.respond Subprocess.check_output(["python", "mafs.py", "d", arg.join(" ")])
 end
   
 rb_bot.command :integral do |event, *arg| #integrals
-  event.respond Subprocess.check_output(["python", "calculus.py", "i", arg.join(" ")])
+  event.respond Subprocess.check_output(["python", "mafs.py", "i", arg.join(" ")])
+end
+
+rb_bot.command :graph do |event, *arg|
+  Subprocess.run(["python", "mafs.py", "g", arg.join(" ")])
+  #file
 end
 
 # encode / decode archiescript
