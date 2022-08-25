@@ -132,7 +132,7 @@ end
 def encode(text)
   arr = []
   for i in text
-    if i not in (uletters + lletters + digits).to_a
+    if not (uletters + lletters + digits).to_a.include? i
       return q = "invalid character at position #{text.index(i)}"
     if i == " "
       arr.append("*")
