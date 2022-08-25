@@ -139,7 +139,10 @@ def encode(text)
       var = "+"*i.to_i + "&!"
       arr.append(var)
     arr.append(".;")
-  event.respond "".join(arr)
+  return "".join(arr)
+      
+rb_bot.command :encode do |event, *arg|
+  event.respond encode(arg)
 
 rb_bot.run
 rb_bot.join
