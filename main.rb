@@ -143,6 +143,7 @@ def encode(text)
     elsif i.isDigit?
       var = "+"*i.to_i + "&!"
       arr.append(var)
+    end
     arr.append(".;")
   return "".join(arr)
 end
