@@ -98,61 +98,20 @@ end
 
 # calculus
 rb_bot.command :derivative do |event, *arg| #derivatives
-  event.respond Subprocess.check_output(["python", "mafs.py", "d", arg.join(" ")])
+  event.respond Subprocess.check_output(["python", "q.py", "d", arg.join(" ")])
 end
   
 rb_bot.command :integral do |event, *arg| #integrals
-  event.respond Subprocess.check_output(["python", "mafs.py", "i", arg.join(" ")])
+  event.respond Subprocess.check_output(["python", "q.py", "i", arg.join(" ")])
 end
 
 rb_bot.command :graph do |event, *arg|
-  Subprocess.run(["python", "mafs.py", "g", arg.join(" ")])
+  Subprocess.run(["python", "q.py", "g", arg.join(" ")])
   #file
 end
 
-# encode / decode archiescript
-
-$uletters = "A".."Z"
-$lletters = "a".."z"
-$digits = "0".."9"
-
-class String
-  def isUpper?
-    self in $uletters
-  end
-
-  def isLower?
-    self in $lletters
-  end
-  
-  def isDigit?
-    self in $digits
-  end
-end
-
-def encode(text)
-  arr = []
-  for i in text
-    if not ($uletters + $lletters + $digits).to_a().include? i
-      return q = "invalid character at position #{text.index(i)}"
-    end
-    if i == " "
-      arr.append("*")
-    elsif i.isUpper?
-      arr.append("#{((Base16.decode16(i.ord.to_i(16))) - (Base16.decode16('0x40')).to_i)*'+'}@")
-    elsif i.isLower?
-      arr.append("#{((Base16.decode16(i.ord.to_i(16))) - (Base16.decode16('0x60')).to_i)*'+'}#")
-    elsif i.isDigit?
-      var = "+"*i.to_i + "&!"
-      arr.append(var)
-    end
-    arr.append(".;")
-  end
-  return "".join(arr)
-end
-      
 rb_bot.command :encode, min_args: 1 do |event, *arg|
-  event.respond encode(arg)
+  event.respond Subprocess.check_output(["python", "q.py", "e", arg.join(" ")])
 end
 
 rb_bot.run
