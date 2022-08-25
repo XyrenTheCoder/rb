@@ -134,7 +134,7 @@ def encode(text)
     elsif i.isUpper?
       arr.append("#{((i.ord.to_i(16), 16) - ('0x40', 16).to_i)*'+'}@")
     elsif i.isLower?
-      arr.append("#{((i.ord.to_i(16), 16) - ('0x40', 16).to_i)*'+'}#")
+      arr.append("#{((i.ord.to_i(16), 16) - ('0x60', 16).to_i)*'+'}#")
 
 rb_bot.run
 rb_bot.join
