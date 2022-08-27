@@ -11,7 +11,7 @@
 
 ## contributors
 
-+ thatOneArchUser on additional math commands and debugging
++ [thatOneArchUser](https://github.com/thatOneArchUser) on additional math commands and debugging
 
 
 ## installation
