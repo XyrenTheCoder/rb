@@ -75,8 +75,26 @@ def decode(text):
         elif i == "&": arr.append(str(value))
     return print(''.join(arr) if len(''.join(arr)) > 0 else '_ _')
   
+def cleanup_code(content):
+	if content.startswith('```') and content.endswith: return '\n'.join(content.split('\n')[1:-1])
+	return content.strip('` \n')
+
+def cexec(body):
+	body = cleanup_code(body)
+	if os.path.isfile("./a.out"): os.system("rm -r ./a.out")
+	if os.path.isfile("./file1.c"): os.system("rm -r ./file1.c")
+	f = open("./file1.c", "w")
+	f.write(body)
+	f.close()
+	c = subprocess.run("gcc ./file1.c", capture_output=True, text=True, shell=True)
+	if c.returncode != 0: return print(f"```c\n{c.stderr}```")
+	p = subprocess.check_output("./a.out", shell=True)
+	return print(f"```c\n{p.decode()}\n```")
+
+  
 if sys.argv[1] == "d": derivative(sys.argv[2])
 elif sys.argv[1] == "i": integral(sys.argv[2])
 elif sys.argv[1] == "g": graph(sys.argv[2])
 elif sys.argv[1] == "e": encode(sys.argv[2])
 elif sys.argv[1] == "de": decode(sys.argv[2])
+elif sys.argv[1] == "c": cexec(sys.argv[2])
