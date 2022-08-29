@@ -119,5 +119,9 @@ rb_bot.command :decode do |event, *arg| #decode
   event.respond Subprocess.check_output(["python", "q.py", "de", arg.join(" ")])
 end
 
+rb_bot.command :cexec do |event, *arg| #cexecute
+  event.respond Subprocess.check_output(["python", "q.py", "c", arg.join(" ")])
+end
+
 rb_bot.run
 rb_bot.join
