@@ -11,7 +11,7 @@
 
 ## contributors
 
-+ [thatOneArchUser](https://github.com/thatOneArchUser) on additional math commands and debugging
++ [dtxc](https://github.com/dtxc) on additional math commands and debugging
 
 
 ## installation
